@@ -5,9 +5,17 @@
 </head>
 <body>
 	<div id="app">
-		{{ onOff }}
 
+		<!-- On Off -->
+		<div v-if="onOff">On</div>
+		<div v-if="!onOff">Off</div>
 		<button v-on:click="toggleOnOff()">Toggle</button>
+
+		<!-- LOOPS -->
+		<div v-for="post in postList">
+			<a v-bind:href="post.link">{{ post.link }}</a>
+		</div>
+
 	</div>
 
 	<script src="js/app.js"></script>
