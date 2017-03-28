@@ -12,7 +12,9 @@
 		<button v-on:click="toggleOnOff()">Toggle</button>
 
 		<!-- LOOPS -->
-		<div v-for="post in postList">
+		<br/><br/>
+		<input type="text" v-model="keyword" placeholder="Search JS framework">
+		<div v-for="post in filteredList">
 			<a v-bind:href="post.link">{{ post.link }}</a>
 		</div>
 

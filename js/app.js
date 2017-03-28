@@ -10,7 +10,7 @@ class Post {
 const app = new Vue({
 	el:	'#app',
 	data: {
-		keyword: 'javascript',
+		keyword: '',
 		onOff: true,
 		postList: [
 			new Post(
@@ -72,6 +72,13 @@ const app = new Vue({
 	methods: {
 		toggleOnOff: function() {
 			this.onOff = !this.onOff;
+		}
+	},
+	computed: {
+		filteredList() {
+			return this.postList.filter((post) => {
+				return post.title.toLowerCase().includes(this.keyword.toLowerCase());
+			});
 		}
 	}
 });
