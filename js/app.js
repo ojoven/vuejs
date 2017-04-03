@@ -12,6 +12,7 @@ const app = new Vue({
 	data: {
 		keyword: '',
 		onOff: true,
+		backend: '',
 		postList: [
 			new Post(
 				'Vue.js',
@@ -72,6 +73,20 @@ const app = new Vue({
 	methods: {
 		toggleOnOff: function() {
 			this.onOff = !this.onOff;
+		},
+		getDataBackend: function() {
+
+			// GET /someUrl
+			this.$http.get('/vuejs/test.php').then(response => {
+
+				console.log(response);
+
+				// get body data
+				this.backend = response.body;
+
+			}, response => {
+				// error callback
+			});
 		}
 	},
 	computed: {

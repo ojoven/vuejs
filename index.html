@@ -2,21 +2,31 @@
 <head>
 	<title>Vue.js</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
 </head>
 <body>
 	<div id="app">
 
 		<!-- On Off -->
+		<h2>Methods and v-if</h2>
 		<div v-if="onOff">On</div>
 		<div v-if="!onOff">Off</div>
-		<button v-on:click="toggleOnOff()">Toggle</button>
+		<button @click="toggleOnOff()">Toggle</button>
 
 		<!-- LOOPS -->
 		<br/><br/>
+		<h2>Loops</h2>
 		<input type="text" v-model="keyword" placeholder="Search JS framework">
 		<div v-for="post in filteredList">
 			<a v-bind:href="post.link">{{ post.link }}</a>
 		</div>
+
+
+		<!-- CONNECTION TO BACKEND -->
+		<br/><br/>
+		<h2>AJAX calls</h2>
+		<button @click="getDataBackend()">Get Data Backend</button>
+		<div>{{ backend }}</div>
 
 	</div>
 
