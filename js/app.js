@@ -95,5 +95,26 @@ const app = new Vue({
 				return post.title.toLowerCase().includes(this.keyword.toLowerCase());
 			});
 		}
+	},
+	created: function() {
+		console.log('HEY! ');
+	}
+});
+
+Vue.component('todo-item', {
+
+	props: ['todo'],
+	template: '<li>{{ todo.text }}</li>'
+
+});
+
+var todoComponent = new Vue({
+	el: '#component-example',
+	data: {
+		groceryList: [
+			{ text: 'Vegetables' },
+			{ text: 'Cheese' },
+			{ text: 'Others' }
+		]
 	}
 });
