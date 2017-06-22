@@ -13,6 +13,7 @@ const app = new Vue({
 		keyword: '',
 		onOff: true,
 		backend: '',
+		show: true,
 		postList: [
 			new Post(
 				'Vue.js',
@@ -98,23 +99,5 @@ const app = new Vue({
 	},
 	created: function() {
 		console.log('HEY! ');
-	}
-});
-
-Vue.component('todo-item', {
-
-	props: ['todo'],
-	template: '<li>{{ todo.text }}</li>'
-
-});
-
-var todoComponent = new Vue({
-	el: '#component-example',
-	data: {
-		groceryList: [
-			{ text: 'Vegetables' },
-			{ text: 'Cheese' },
-			{ text: 'Others' }
-		]
 	}
 });
