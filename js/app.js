@@ -7,8 +7,14 @@ class Post {
 	}
 }
 
+// COMPONENTS
+Vue.component('ojoven', {
+	template: '<h1>@ojoven!</h1>'
+});
+
 const app = new Vue({
 	el:	'#app',
+	template: '<div><ojoven></ojoven></div>',
 	data: {
 		keyword: '',
 		onOff: true,
